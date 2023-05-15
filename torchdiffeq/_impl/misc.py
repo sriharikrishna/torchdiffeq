@@ -375,7 +375,6 @@ def np_nextafter(x1, x2):
 
 def _check_timelike(name, timelike, can_grad):
     assert isinstance(timelike, torch.Tensor), '{} must be a torch.Tensor'.format(name)
-    _assert_floating(name, timelike)
     assert timelike.ndimension() == 1, "{} must be one dimensional".format(name)
     if not can_grad:
         assert not timelike.requires_grad, "{} cannot require gradient".format(name)
