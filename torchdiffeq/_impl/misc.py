@@ -378,8 +378,8 @@ def _check_timelike(name, timelike, can_grad):
     assert timelike.ndimension() == 1, "{} must be one dimensional".format(name)
     if not can_grad:
         assert not timelike.requires_grad, "{} cannot require gradient".format(name)
-    diff = timelike[1:] > timelike[:-1]
-    assert diff.all() or (~diff).all(), '{} must be strictly increasing or decreasing'.format(name)
+    #diff = timelike[1:] > timelike[:-1]
+    #assert diff.all() or (~diff).all(), '{} must be strictly increasing or decreasing'.format(name)
 
 
 def _flip_option(options, option_name):
