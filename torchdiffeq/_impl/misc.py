@@ -267,7 +267,7 @@ def _check_inputs(func, y0, t, rtol, atol, method, options, event_fn, SOLVERS):
     # Normalise time
     _check_timelike('t', t, True)
     t_is_reversed = False
-    if len(t) > 1 and t[0] > t[1]:
+    if torch.gt(len(t), 1) and torch.gt(t[0],t[1]):
         t_is_reversed = True
 
     if t_is_reversed:
