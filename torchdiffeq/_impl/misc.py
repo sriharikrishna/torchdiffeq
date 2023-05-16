@@ -293,7 +293,7 @@ def _check_inputs(func, y0, t, rtol, atol, method, options, event_fn, SOLVERS):
         _flip_option(options, 'jump_t')
 
     # Can only do after having normalised time
-    _assert_increasing('t', t)
+    #_assert_increasing('t', t)
 
     # Tol checking
     if torch.is_tensor(rtol):
